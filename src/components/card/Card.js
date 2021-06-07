@@ -6,6 +6,7 @@ const Card = ({ title, imgsrc, desc, couponcode}) => {
     const [enable, setEnable] = useState(true);
     const [coupon, setCoupon] = useState("UNLOCK");
 
+    
     useEffect(() => {
         if(!enable) {
             setCoupon(couponcode);
@@ -16,8 +17,9 @@ const Card = ({ title, imgsrc, desc, couponcode}) => {
             console.log('Hello from effect..');
             return () => clearInterval(timer);
         }
+        // eslint-disable-next-line
     },[enable]);
-
+    
     return (
         <div className="card__container">
             <p>{title}</p>
